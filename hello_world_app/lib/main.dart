@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world_app/screens/screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,26 +9,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: AppBarExample(),
+      debugShowCheckedModeBanner: false,
+      home: MyAppBar(),
     );
   }
 }
 
-class AppBarExample extends StatelessWidget {
-  const AppBarExample({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Hola Mundo'),
-        ),
-        body: const Center(
-          child: Text(
-            'Diego Perez',
-            style: TextStyle(color: Colors.black87, fontSize: 32),
-          ),
-        ),
-        backgroundColor: Colors.blueGrey);
-  }
-}
