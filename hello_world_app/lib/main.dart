@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world_app/screens/screen.dart';
+import 'package:hello_world_app/screens/firstscreen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,10 +8,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyAppBar(),
+      theme: ThemeData(
+        useMaterial3: true, 
+        colorSchemeSeed: Colors.redAccent),
+      home: const FirstScreen(),
     );
   }
 }
-
