@@ -9,32 +9,37 @@ class CounterScreen extends StatefulWidget {
 
 class _CounterScreenState extends State<CounterScreen> {
   int clickCounter = 0;
+  String clicks = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CounterScreen'),
+        title: const Text('Counter Screen'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('$clickCounter',
-                style: const TextStyle(
-                    fontSize: 160, fontWeight: FontWeight.w100)),
-            const Text('Clicks', style: TextStyle(fontSize: 25))
+            Text(
+              '$clickCounter',
+              style:
+                  const TextStyle(fontSize: 160, fontWeight: FontWeight.w100),
+            ),
+            //Text(
+            //(clickCounter == 0) ? clicks = 'Click' : 'Clicks',
+            Text(
+              'Click${clickCounter == 1 ? '':'s'}',
+              style: const TextStyle(fontSize: 25),
+            )
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-          clickCounter++;
-          });
-        },
-        child: const Icon(Icons.plus_one),
-      ),
+          onPressed: () => setState(() {
+                clickCounter++;
+              }),
+          child: const Icon(Icons.favorite)),
     );
   }
 }
